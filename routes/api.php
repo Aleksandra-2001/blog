@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/product', ProductController::class);
+Route::prefix('products')->group(function () {
+    Route::apiResource('/{product}/reviews','ReviewControler');
+});
